@@ -1,0 +1,20 @@
+<div class="container">
+  <p>This is where you can create a new unit for your class.</p>
+  <input class="input-text" type="text" placeholder="Scenario Name" ng-model="admin.newScenarioName">
+  
+  <button type="submit" class="btn btn-primary create-scenario" ng-click="admin.addScenario()">Create Scenario</button>
+
+  <input class="input-text" type="text" placeholder="New Trait Name" ng-model="admin.newTraitName">
+
+  <button type="submit" class="btn btn-primary create-scenario" ng-click="admin.addTrait()">Create Trait</button>
+
+  <ul class="list-group user-list">
+    <li class="list-group-item" ng-repeat="scenario in admin.scenarios">
+	    <div class="user-info">
+	        <strong>{{scenario.name}}</strong><br>
+	        <span class="text-muted">{{scenario.info}}</span>
+	    </div>
+        <a ng-click="admin.delete(scenario)" class="trash"><span class="fa fa-trash fa-2x"></span></a>
+    </li>
+  </ul>
+</div>
